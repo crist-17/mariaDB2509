@@ -51,11 +51,12 @@ SELECT * FROM membertbl2;
 SELECT memberName, memberAddress FROM MEMBERtbl2;
 SELECT * from membertbl2 WHERE memberName = '지은이';
 
-SELECT * FROM productTBL;
-
-DELETE FROM productTBL
+SELECT * FROM productTBL
 WHERE productName = '컴퓨터'
 LIMIT 1;
+
+DELETE FROM productTBL
+
 
 CREATE TABLE `my testTBL` (id INT);
 CREATE TABLE `mmy testTBL` (id INT);
