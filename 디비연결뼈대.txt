@@ -1,0 +1,38 @@
+
+📌 JDBC DB 연결 & CRUD 흐름 (공식 뼈대)
+
+
+[1] DB 연결 (공식)
+    ↓
+ DriverManager.getConnection(url, user, password)
+    ↓
+ Connection con   ← DB랑 케이블 연결된 상태
+
+[2] SQL 준비
+    ↓
+ con.prepareStatement("SQL문");
+    ↓
+ PreparedStatement pstmt
+
+[3] 파라미터 세팅 (필요할 때)
+    ↓
+ pstmt.setXXX(1, 값1);
+ pstmt.setXXX(2, 값2);
+
+[4] 실행
+    ↓
+ - INSERT/UPDATE/DELETE → pstmt.executeUpdate()
+ - SELECT               → pstmt.executeQuery()
+
+[5] 결과 처리 (SELECT일 때만)
+    ↓
+ ResultSet rs = pstmt.executeQuery();
+ while(rs.next()) {
+    rs.getString("컬럼명");
+ }
+
+[6] 자원 해제 (공식)
+    ↓
+ rs.close();
+ pstmt.close();
+ con.close();
